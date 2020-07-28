@@ -1,15 +1,30 @@
 <template>
-	<div>
-		<h1>Todos</h1>
+	<div class="todo-wrapper">
+		<div class="todo">
+			<div v-bind:key="todo.id" v-for="todo in todos">
+				<TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)"/>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
+	import TodoItem from './TodoItem.vue';
+
 	export default{
-		name: "Todos"
+		name: "Todos",
+		props: ["todos"],
+		components:{
+			TodoItem
+		}
 	}
 </script>
 
 <style scoped>
-	
+	.todo-wrapper{
+
+	}
+	.todo{
+	background-color: #ffffff;
+	}
 </style>
