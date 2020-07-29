@@ -5,7 +5,7 @@
 			<input type="checkbox" v-on:change="markComplete">
 			{{todo.title}}
 			<button class="delete" @click="$emit('del-todo', todo.id)">
-				x
+				<i class="fas fa-trash"></i>
 			</button>
 		</p>
 	</div>
@@ -34,8 +34,8 @@
 	}
 
 	.delete{
-		width: 20px;
-		height: 20px;
+		width: 25px;
+		height: 25px;
 		color: #ffffff;
 		background-color: #ff0000;
 		border: none;
